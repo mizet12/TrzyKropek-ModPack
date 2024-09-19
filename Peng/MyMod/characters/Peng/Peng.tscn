@@ -1,9 +1,8 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://mechanics/Hitbox.gd" type="Script" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=3]
-[ext_resource path="res://icon2.png" type="Texture" id=4]
 [ext_resource path="res://MyMod/characters/Peng/States/Atak.gd" type="Script" id=5]
 [ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=6]
 [ext_resource path="res://characters/stickman/sprites/stickman9.png" type="Texture" id=7]
@@ -124,10 +123,10 @@ animations = [ {
 "name": "AirUpwardPunch",
 "speed": 60.0
 }, {
-"frames": [ ExtResource( 87 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 87 ) ],
+"frames": [ ExtResource( 87 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 89 ), ExtResource( 89 ) ],
 "loop": true,
 "name": "Atak",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 37 ) ],
 "loop": true,
@@ -326,6 +325,7 @@ animations = [ {
 material = SubResource( 1 )
 frames = SubResource( 2 )
 animation = "Atak"
+frame = 6
 
 [node name="Atak" type="Node2D" parent="StateMachine" index="57"]
 script = ExtResource( 5 )
@@ -333,14 +333,14 @@ apply_forces = true
 apply_fric = true
 apply_grav = true
 sprite_animation = "Atak"
-anim_length = 10
-ticks_per_frame = 2
-force_dir_x = "2"
-force_speed = "2"
+anim_length = 6
+sprite_anim_length = 7
+force_dir_x = "4"
+force_speed = "4"
 force_tick = 2
 title = "Atak"
 type = 1
-button_texture = ExtResource( 4 )
+button_texture = ExtResource( 89 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded"
@@ -349,13 +349,15 @@ hit_cancel_into_string = "Grounded"
 [node name="Hitbox" type="Node2D" parent="StateMachine/Atak" index="0"]
 z_index = 1000
 script = ExtResource( 1 )
-y = -19
-width = -97
-height = 58
-damage = 200
-minimum_damage = 50
-victim_hitlag = 5
-knockback = "5"
+x = 20
+y = -26
+width = -21
+height = 27
+damage = 50
+minimum_damage = 25
+hitstun_ticks = 15
+victim_hitlag = 7
+knockback = "2"
 pushback_x = "2"
 start_tick = 6
 active_ticks = 3
