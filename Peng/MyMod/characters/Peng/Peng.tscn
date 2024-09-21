@@ -5,7 +5,7 @@
 [ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=3]
 [ext_resource path="res://MyMod/characters/Peng/Sprites/Peng Jump.png" type="Texture" id=4]
 [ext_resource path="res://MyMod/characters/Peng/States/Atak.gd" type="Script" id=5]
-[ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=6]
+[ext_resource path="res://MyMod/characters/Peng/Sprites/Peng KnockDown.png" type="Texture" id=6]
 [ext_resource path="res://characters/stickman/sprites/stickman9.png" type="Texture" id=7]
 [ext_resource path="res://characters/stickman/sprites/stickman7.png" type="Texture" id=8]
 [ext_resource path="res://characters/stickman/sprites/stickman17.png" type="Texture" id=9]
@@ -24,7 +24,7 @@
 [ext_resource path="res://characters/stickman/sprites/stickman21.png" type="Texture" id=22]
 [ext_resource path="res://characters/stickman/sprites/stickman22.png" type="Texture" id=23]
 [ext_resource path="res://characters/stickman/sprites/stickman24.png" type="Texture" id=24]
-[ext_resource path="res://characters/stickman/sprites/stickman2.png" type="Texture" id=25]
+[ext_resource path="res://MyMod/characters/Peng/Sprites/Peng DashForward.png" type="Texture" id=25]
 [ext_resource path="res://characters/stickman/sprites/stickman3.png" type="Texture" id=26]
 [ext_resource path="res://characters/stickman/sprites/stickman5.png" type="Texture" id=27]
 [ext_resource path="res://characters/stickman/sprites/stickman4.png" type="Texture" id=28]
@@ -488,6 +488,7 @@ interrupt_into_string = "Grounded"
 hit_cancel_into_string = "Grounded"
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/JumpAtak" index="0"]
+z_index = 1000
 script = ExtResource( 1 )
 damage = 50
 minimum_damage = 50
